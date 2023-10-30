@@ -22,7 +22,7 @@ public class Main {
         System.out.println("Set 'boolean' true or false");
         boolean booleanSet = scanner.nextBoolean();
 
-        scanner.close();
+        //scanner.close();
 
         //wyswietlanie wprowadzonych zmiennych
 
@@ -58,6 +58,8 @@ public class Main {
 
         int [] firstTab= { 5, 3, 7, 21, 37};
         int [] secondTab= { 73, 12, 10, 8, 73};
+        System.out.println("First array :" + Arrays.toString(firstTab));
+        System.out.println("Second array :" + Arrays.toString(secondTab));
 
         int sumFirstTab = Arrays.stream(firstTab).sum();
         int sumSecondTab = Arrays.stream(secondTab).sum();
@@ -78,14 +80,37 @@ public class Main {
         System.out.println("Min value of second array :" + minSecondTab);
         System.out.println("Min value of second array :" + maxSecondTab);
 
-        System.out.println("Clone of first array named third array");
+        System.out.println("Clone/Copy of first array named third array");
         //https://stackoverflow.com/questions/5785745/make-copy-of-an-array
-        int [] thirdTab = firstTab.clone();
-        System.out.println("Clone array :" + Arrays.toString(thirdTab)); //wyświetlenie sklonowanej tablicy do ''stringa
+        int [] thirdTabClone = firstTab.clone();
+        System.out.println("Clone array :" + Arrays.toString(thirdTabClone)); //wyświetlenie sklonowanej tablicy do 'stringa'
+        // https://stackoverflow.com/questions/32806173/copying-arrays-the-right-way
+        int [] thirdTabCopy = Arrays.copyOf(firstTab, firstTab.length);
+        System.out.println("Copy array :" + Arrays.toString(thirdTabCopy)); //wyświetlenie kopiowanej tablicy do 'stringa'
+
+        System.out.println("Enter number to compare with numbers in to the arrays: ");
+        int number = scanner.nextInt();
+        int [] fourTab = Arrays.stream(firstTab).filter(i -> i > number).toArray();
+        //https://stackoverflow.com/questions/56289903/display-number-in-array-greater-than-45-onlyim-a-complete-beginner
+        System.out.println("Elements of first array greater then your number:" + Arrays.toString(fourTab));
+
+        System.out.println("We have 5 elements in first array, write witch element you want to remove from array: ");
+        System.out.println("Our array :" + Arrays.toString(firstTab));
+        int removeElement = scanner.nextInt();
+        int [] fiveTab = Arrays.stream(firstTab).filter(i -> i != removeElement).toArray();
+        System.out.println("New array without designated element of main array: " + Arrays.toString(fiveTab));
+
+        int [] mergeArray = new int [firstTab.length + secondTab.length];
+        System.arraycopy(firstTab, 0 , mergeArray, 0 ,firstTab.length);
+        System.arraycopy(secondTab, 0 , mergeArray,firstTab.length , secondTab.length);
+        Arrays.sort(mergeArray, 0 ,mergeArray.length);
+        System.out.println("Merge array" + Arrays.toString(mergeArray));
+        System.out.println("Find number of appearances of chosen number from merged array, please choose the number: ");
+        int findNumber = scanner.nextInt();
+        long counting = Arrays.stream(mergeArray).filter(i -> i == findNumber).count();
+        System.out.println("Numbers of apperances of chosen number: " + findNumber + " is " + counting);
 
 
-
-
-
+        scanner.close();
     }
 }
