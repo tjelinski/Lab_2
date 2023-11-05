@@ -38,7 +38,7 @@ public class Wallet {
         myWallet.subtractMoney(32.7); // odjęcie  32.7 USD
         System.out.println(myWallet.getBalance() + myWallet.getCurrency()); // wyświetlenie salda w atulanej walucie
         myWallet.subtractMoney(40); // odjecie 40 USD
-        System.out.println(myWallet.getBalance()); //
+        System.out.println(myWallet.getBalance() + myWallet.getCurrency());
     }
 }
 
