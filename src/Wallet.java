@@ -42,4 +42,32 @@ public class Wallet {
     }
 }
 
+/*
 
+// creation of a classroom framework
+
+public class YourClass {
+    private double yourVariableOne;
+    private String yourVariableTwo;
+
+    public Constructor[named like your class name](double yourVariableOne, String yourVariableTwo) {
+        this.yourVariableOne = yourVariableOne;
+        this.yourVariableTwo = yourVariableTwo;
+    }
+
+    public void methodOne(variableType declarateParameter) {
+        yourVariableOne += declarateParameter;
+    }
+
+    public variableType methodTwo() {
+        System.out.println("something to print if it is necessary: ");
+        return yourVariableTwo;
+    }
+
+    public static void main(String[] args) {
+
+        //code in method main
+
+    }
+}
+ */
