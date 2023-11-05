@@ -1,5 +1,5 @@
 public class Wallet {
-    private double howMuchMoney; // liczba reprezentuje ilość portfela tzn. ilość srodków [cecha]
+    private double howMuchMoney; // liczba reprezentuje ilość pieniedzy tzn. ilość srodków [cecha]
     private String currency; // waluta w jakiej przechowywane sa środki w portfelu [cecha]
 
     public Wallet(double howMuchMoney, String currency) {   // konstruktor klasy wallet wywoływany przy tworzeniu nowego obiektu przyjmuje dwa argumenty howMuchMoney oraz currency
@@ -36,7 +36,7 @@ public class Wallet {
         Wallet myWallet = new Wallet(0.0, " USD"); //tworzenie nowego obiektu z 0.00 USD
         myWallet.addMoney(50.5); // dodanie 50.5 USD
         myWallet.subtractMoney(32.7); // odjęcie  32.7 USD
-        System.out.println(myWallet.getBalance() + myWallet.getCurrency()); // wyświetlenie salda w atulanej walucie
+        //System.out.println(myWallet.getBalance() + myWallet.getCurrency()); // wyświetlenie salda w atulanej walucie
         myWallet.subtractMoney(40); // odjecie 40 USD
         System.out.println(myWallet.getBalance() + myWallet.getCurrency());
     }
