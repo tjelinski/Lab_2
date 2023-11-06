@@ -44,7 +44,7 @@ public class Wallet {
 
 /*
 
-// creation of a classroom framework
+// creation of a class template
 
 public class YourClass {
     private double yourVariableOne;
